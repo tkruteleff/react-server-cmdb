@@ -1,11 +1,16 @@
+import React, { Fragment } from 'react';
 
-import AddServer from './Components/AddServer';
+import Header from './UI/Header/Header';
+import Main from './UI/Main/Main';
+import Footer from './UI/Footer/Footer';
 
 function App() {
   return (
-    <div>
-      <AddServer />
-    </div>
+    <Fragment>
+      <Header />
+      <Main />
+      <Footer />
+    </Fragment>
   );
 }
 
