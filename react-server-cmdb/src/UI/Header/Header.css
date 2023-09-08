@@ -1,0 +1,9 @@
+.header {
+    background-color: #d3d3d3;
+    padding: 5px;
+    display: block;
+}
+
+.header h1 {
+    text-align: center;
+}

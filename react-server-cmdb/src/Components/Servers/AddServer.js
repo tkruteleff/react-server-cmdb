@@ -7,6 +7,8 @@ import classes from './AddServer.module.css';
 const AddServer = (props) => {
     const [newServer, setNewServer] = useState({
         ipAddress: "",
+        nwMask: "",
+        nwGateway: "",
         computerName: "",
         fqdn: "",
         operatingSystem: "",
@@ -36,6 +38,8 @@ const AddServer = (props) => {
 
         setNewServer({
             ipAddress: "",
+            nwMask:"",
+            nwGateway: "",
             computerName: "",
             fqdn: "",
             operatingSystem: "",
@@ -57,6 +61,14 @@ const AddServer = (props) => {
                 <div className={classes.div}>
                     <label className={classes.label}>IP Address:</label>
                     <input type="text" className={classes.input} name="ipAddress" value={newServer.ipAddress} onChange={addServerFormHandler} />
+                </div>
+                <div className={classes.div}>
+                    <label className={classes.label}>Network Mask:</label>
+                    <input type="text" className={classes.input} name="nwMask" value={newServer.nwMask} onChange={addServerFormHandler} />
+                </div>
+                <div className={classes.div}>
+                    <label className={classes.label}>Network Gateway:</label>
+                    <input type="text" className={classes.input} name="nwGateway" value={newServer.nwGateway} onChange={addServerFormHandler} />
                 </div>
                 <div className={classes.div}>
                     <label className={classes.label}>Computer Name:</label>
@@ -81,7 +93,11 @@ const AddServer = (props) => {
                 </div>
                 <div className={classes.div}>
                     <label className={classes.label}>Location:</label>
-                    <input type="text" className={classes.input} name="location" value={newServer.location} onChange={addServerFormHandler} />
+                    <select name="location" value={newServer.location} onChange={addServerFormHandler}>
+                        <option></option>
+                        <option value="On-Premises">On-Premises</option>
+                        <option value="Azure">Azure</option>
+                    </select>
                 </div>
                 <div className={classes.div}>
                     <label className={classes.label}>Organization:</label>
